@@ -1,10 +1,13 @@
 const path =require('path');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-const {users_db, guardarUser} = require('../data/users');
+
 const db = require('../database/models')
+
+//db que ya no se usará. Modelo para datos en el JSON
 const {products_db} = require('../data/productDB')
-const { push } = require('../validation/loginValidator');
+const {users_db, guardarUser} = require('../data/users');
+
 
 module.exports = {
     login: (req,res) => {

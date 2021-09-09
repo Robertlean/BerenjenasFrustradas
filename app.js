@@ -9,7 +9,8 @@ const cookieCheck = require('./middlewares/cookiecheck')
 const localsUserCheck = require('./middlewares/localsusercheck');
 
 var indexRouter = require('./routes/index');
-var userRouter = require('./routes/users')
+var userRouter = require('./routes/users');
+var productRouter = require('./routes/products')
 
 var app = express();
 
@@ -28,7 +29,8 @@ app.use(localsUserCheck);
 app.use(cookieCheck)
 
 app.use('/', indexRouter);
-app.use('/', userRouter)
+app.use('/', userRouter);
+app.use('/products', productRouter)
 
 
 // catch 404 and forward to error handler
